@@ -1,0 +1,28 @@
+<aakarshee style=" position: fixed;  top: 50%; left: 50%;  transform: translate(-50%, -50%);
+                   font-family:  math;font-size: 50; font-weight: bold; "
+                   >
+</aakarshee>
+<script>
+let i=0;
+const render = ()=>{
+    const doc = document.querySelector('aakarshee');
+    doc.innerHTML = '';
+    let name = 'AAKARSHEE';
+    name= name.split('').map((char,k)=>{
+        const elm = document.createElement('span');
+        elm.style.letterSpacing = 20;
+        if(i== k) {
+            elm.innerHTML = '&#10084';
+            elm.setAttribute('style', 'color: red');
+            }
+        else elm.innerHTML =  char;
+        doc.appendChild(elm);
+    })
+    i = (i+1) % name.length;
+   
+ }
+setInterval(()=>{
+           render();
+},1000)
+
+</script>
